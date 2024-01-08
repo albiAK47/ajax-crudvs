@@ -6,6 +6,11 @@
 <ul>
     <li> We have create a ajax crudvs with no loading system <li>
     <li> We have use sweetalert <li>
+        
+        
+        
+        
+        
         swal({
 				title: 'Are you sure ?',
 				text: 'You data will be deleted!!',
