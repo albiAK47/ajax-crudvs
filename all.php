@@ -9,6 +9,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Cell</th>
+            <th>Username</th>
             <th>Photo</th>
             <th>Action</th>
           </tr>
