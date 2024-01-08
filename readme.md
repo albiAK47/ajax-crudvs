@@ -2,10 +2,8 @@
 
 <img src="readme.png">
 
-
-<ul>
-    <li> We have create a ajax crudvs with no loading system <li>
-    <li> We have use sweetalert <li>
+#### We have create a ajax crudvs with no loading system
+#### We have use sweetalert
         
         
         
@@ -44,13 +42,4 @@
 						icon: 'success'
 					});
 				}
-    <li> More coming soon<li>
-    <li> More coming soon <li>
-    <li> More coming soon <li>
-    <li> More coming soon <li>
-    <li> More coming soon <li>
-    <li> More coming soon <li>
-
-
-
-</ul>
+   
