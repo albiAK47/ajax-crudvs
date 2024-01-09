@@ -57,22 +57,22 @@
 			return false;
 		});
 
-		$('#student_form_update').click(function() {
+		// $('#student_form_update').click(function() {
 
-			$.ajax({
-				url: 'create.php',
-				success: function(ami) {
-					$('.app').html(ami);
+		// 	$.ajax({
+		// 		url: 'create.php',
+		// 		success: function(ami) {
+		// 			$('.app').html(ami);
 
-				}
-			});
-
-
-			return false;
-		});
+		// 		}
+		// 	});
 
 
+		// 	return false;
+		// });
 
+
+		// View Profile Ajax Call
 
 		$(document).on('click', '#profile', function(e) {
 
@@ -99,60 +99,85 @@
 
 		});
 		
+		// View Edit Ajax Call
 
 
 		$(document).on('click', '#edit', function(e) {
 
-			e.preventDefault();
+				e.preventDefault();
+
+
+				
+				let id = $(this).attr('edit_id');
 
 
 
-			let id = $(this).attr('edit_id');
+				$.ajax({
+
+					url: 'edit.php',
+					method: "POST",
+					data: {
+						
+						id: id
+					},
+					success: function(data) {
+						
+						$('.app').html(data);
+					}
+
+
+				});
+
+		});
+
+				
 
 
 
-			$.ajax({
-				url: 'edit.php',
-				method: "POST",
-				data: {
-					id: id
-				},
-				success: function(data) {
-					$('.app').html(data);
-				}
-			});
 
-			$(document).on('submit', '#student_form_update', function(e) {
+
+		$(document).on('submit', '#student_form_update', function(e) {
 
 				e.preventDefault();
 
+				let id = $('#update-id').val();
+				let name = $('#name').val();
+				let email = $('#email').val();
+				let cell = $('#cell').val();
+				let username = $('#username').val();
+				
+
 				$.ajax({
-					url: 'update.php',
-					method: 'POST',
-					data: new FormData(this),
-					contentType: false,
-					processData: false,
-					success: function(data) {
-						// $('.app').html(data);
+					url: 'ajax_tem/update.php',
+					method: "POST",
+					data: {
+						id: id,
+						name: name,
+						email: email,
+						cell: cell,
+						username: username
+					
+					},
+					success: function(data) {					
+									
 
-						console.log(data);
+						swal({
+							title: 'Update',
+							text: 'Data Update successfully!',
+							icon: 'success'
+						});
 
-						// swal({
-						// 	title: 'Update',
-						// 	text: 'Data Update successfully!',
-						// 	icon: 'success'
-						// });
+						
+
 					}
 
 					});
 
 
 
-				});
+		});
 
-
-
-			});
+		
 
 		$(document).on('click', 'a#back', function(e) {
 
@@ -286,6 +311,21 @@
 			return false;
 
 		})
+
+		$(document).on('change', 'input[name="file"]', function(e) {
+			
+
+			let file_url = URL.createObjectURL(e.target.files[0]);
+
+			$('img#up_file').attr('src', file_url);	
+			
+			// $('#student_form')[0].reset();
+
+
+		});
+		
+
+
 	</script>
 
 </body>
