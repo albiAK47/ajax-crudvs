@@ -29,20 +29,20 @@
 				<form id="student_form_update" method="POST" anctype="multipart/form-data">
 					<div class="form-group">
 						<label for="">Name</label>
-						<input value="<?php echo $edit_data->name; ?>" id="name" class="form-control" type="text">
-						<input hidden value="<?php echo $edit_data->id; ?>" id="update-id" class="form-control" type="text">
+						<input value="<?php echo $edit_data->name; ?>" name="name" class="form-control" type="text">
+						<input hidden value="<?php echo $edit_data->id; ?>" name="update-id" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Email</label>
-						<input value="<?php echo $edit_data->email; ?>" id="email" class="form-control" type="text">
+						<input value="<?php echo $edit_data->email; ?>" name="email" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Cell</label>
-						<input value="<?php echo $edit_data->cell; ?>" id="cell" class="form-control" type="text">
+						<input value="<?php echo $edit_data->cell; ?>" name="cell" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Username</label>
-						<input value="<?php echo $edit_data->username; ?>" id="username" class="form-control" type="text">
+						<input value="<?php echo $edit_data->username; ?>" name="username" class="form-control" type="text">
 					</div>
 					<div class="container">
 						<div class="row">
@@ -50,7 +50,8 @@
 							<div class="form-group">
 								<h6>Upload Here</h6>					
 									<label for="file"><img style="cursor: pointer;" width="80" data-toggle="tooltip" data-placement="right" title="Profile Photo" src="pic.png" alt=""></label>
-									<input style="display: none;" name="file" type="file" id="file">
+									<input value="<?php echo $edit_data->photo; ?>" style="display: none;" name="file" type="file" id="file">
+									
 								</div>
 							</div>
 							<div class="col">

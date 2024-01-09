@@ -134,30 +134,25 @@
 
 
 
-
+		// Data update korar jonno ata 
 
 		$(document).on('submit', '#student_form_update', function(e) {
 
 				e.preventDefault();
 
-				let id = $('#update-id').val();
-				let name = $('#name').val();
-				let email = $('#email').val();
-				let cell = $('#cell').val();
-				let username = $('#username').val();
+				// let id = $('#update-id').val();
+				// let name = $('#name').val();
+				// let email = $('#email').val();
+				// let cell = $('#cell').val();
+				// let username = $('#username').val();
 				
 
 				$.ajax({
-					url: 'ajax_tem/update.php',
-					method: "POST",
-					data: {
-						id: id,
-						name: name,
-						email: email,
-						cell: cell,
-						username: username
-					
-					},
+					url: 'ajax_tem/update.php',				
+					method: 'POST',
+					data: new FormData(this),
+					contentType: false,
+					processData: false,
 					success: function(data) {					
 									
 
@@ -166,6 +161,8 @@
 							text: 'Data Update successfully!',
 							icon: 'success'
 						});
+
+						
 
 						
 
